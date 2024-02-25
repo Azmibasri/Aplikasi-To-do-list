@@ -1,0 +1,95 @@
+Judul: Aplikasi Todolit
+Deklarasi:
+  DaftarTugas = array kosong
+  Tugas = objek dengan atribut nama, deskripsi, prioritas, deadline, dan status
+  Input = variabel untuk menyimpan masukan pengguna
+  Pilihan = variabel untuk menyimpan pilihan pengguna
+Implementasi:
+  Tampilkan "Selamat datang di aplikasi todolit"
+  Ulangi
+    Tampilkan "Menu:"
+    Tampilkan "1. Tambah tugas"
+    Tampilkan "2. Lihat tugas"
+    Tampilkan "3. Ubah tugas"
+    Tampilkan "4. Hapus tugas"
+    Tampilkan "5. Keluar"
+    Tampilkan "Masukkan pilihan Anda:"
+    Baca Input
+    Jika Input = 1 maka
+      Buat Tugas baru
+      Tampilkan "Masukkan nama tugas:"
+      Baca Tugas.nama
+      Tampilkan "Masukkan deskripsi tugas:"
+      Baca Tugas.deskripsi
+      Tampilkan "Masukkan prioritas tugas (rendah, sedang, tinggi):"
+      Baca Tugas.prioritas
+      Tampilkan "Masukkan deadline tugas (format: dd/mm/yyyy):"
+      Baca Tugas.deadline
+      Set Tugas.status = "belum selesai"
+      Tambahkan Tugas ke DaftarTugas
+      Tampilkan "Tugas berhasil ditambahkan"
+    Jika Input = 2 maka
+      Jika DaftarTugas tidak kosong maka
+        Tampilkan "Daftar tugas Anda:"
+        Untuk setiap Tugas dalam DaftarTugas
+          Tampilkan Tugas.nama, Tugas.deskripsi, Tugas.prioritas, Tugas.deadline, dan Tugas.status
+      Jika tidak
+        Tampilkan "Anda belum memiliki tugas"
+    Jika Input = 3 maka
+      Jika DaftarTugas tidak kosong maka
+        Tampilkan "Daftar tugas Anda:"
+        Untuk setiap Tugas dalam DaftarTugas
+          Tampilkan Tugas.nama, Tugas.deskripsi, Tugas.prioritas, Tugas.deadline, dan Tugas.status
+        Tampilkan "Masukkan nama tugas yang ingin diubah:"
+        Baca Input
+        Cari Tugas dengan nama = Input dalam DaftarTugas
+        Jika Tugas ditemukan maka
+          Tampilkan "Apa yang ingin Anda ubah?"
+          Tampilkan "1. Nama"
+          Tampilkan "2. Deskripsi"
+          Tampilkan "3. Prioritas"
+          Tampilkan "4. Deadline"
+          Tampilkan "5. Status"
+          Tampilkan "Masukkan pilihan Anda:"
+          Baca Pilihan
+          Jika Pilihan = 1 maka
+            Tampilkan "Masukkan nama baru:"
+            Baca Tugas.nama
+          Jika Pilihan = 2 maka
+            Tampilkan "Masukkan deskripsi baru:"
+            Baca Tugas.deskripsi
+          Jika Pilihan = 3 maka
+            Tampilkan "Masukkan prioritas baru (rendah, sedang, tinggi):"
+            Baca Tugas.prioritas
+          Jika Pilihan = 4 maka
+            Tampilkan "Masukkan deadline baru (format: dd/mm/yyyy):"
+            Baca Tugas.deadline
+          Jika Pilihan = 5 maka
+            Tampilkan "Masukkan status baru (belum selesai, selesai):"
+            Baca Tugas.status
+          Tampilkan "Tugas berhasil diubah"
+        Jika tidak
+          Tampilkan "Tugas tidak ditemukan"
+      Jika tidak
+        Tampilkan "Anda belum memiliki tugas"
+    Jika Input = 4 maka
+      Jika DaftarTugas tidak kosong maka
+        Tampilkan "Daftar tugas Anda:"
+        Untuk setiap Tugas dalam DaftarTugas
+          Tampilkan Tugas.nama, Tugas.deskripsi, Tugas.prioritas, Tugas.deadline, dan Tugas.status
+        Tampilkan "Masukkan nama tugas yang ingin dihapus:"
+        Baca Input
+        Cari Tugas dengan nama = Input dalam DaftarTugas
+        Jika Tugas ditemukan maka
+          Hapus Tugas dari DaftarTugas
+          Tampilkan "Tugas berhasil dihapus"
+        Jika tidak
+          Tampilkan "Tugas tidak ditemukan"
+      Jika tidak
+        Tampilkan "Anda belum memiliki tugas"
+    Jika Input = 5 maka
+      Tampilkan "Terima kasih telah menggunakan aplikasi todolit"
+      Berhenti
+    Jika tidak
+      Tampilkan "Pilihan tidak valid"
+  Sampai Input = 5
